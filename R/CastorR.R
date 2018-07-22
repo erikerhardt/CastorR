@@ -1,0 +1,42 @@
+#' CastorR: Format Castor EDC CRF_export.xlsx file for R
+#'
+#' These functions read the CRF_export.xlsx and formats the data for use in R, in
+#'   particular, variables of class date, datetime, factor, and numeric.
+#'
+#' Strategy for labeling factor variables and setting variable classes
+#'
+#'  \enumerate{
+#'    \item{}{Read data}
+#'    \itemize{
+#'      \item{}{Read all `CRF_export.xlsx` file sheets and construct the structures to produce an Rdata file with (1) variable question labels, (2) correct factor levels with labels, and (3) correct data and numeric data types.}
+#'      \item{}{Data in `Study results` has labels in `Study variable list`}
+#'      \item{}{Data in other data sheets (between `Study results` and `Study variable list`) has labels in `Report variable list`}
+#'      \item{}{All factor groups with labels and levels are in `Field options`}
+#'    }
+#'    \item{}{Collect Option group names, levels, and labels}
+#'    \itemize{
+#'      \item{}{`Field options` gives the factor variable levels and labels}
+#'      \item{}{`Option group name`}
+#'      \item{}{`Option name` labels list with `Option value` list}
+#'    }
+#'    \item{}{Assign variable question labels, Factor variables with Option groups, assign varible class data types}
+#'    \itemize{
+#'      \item{}{`Study variable list` gives the question names for `Study results`}
+#'      \item{}{`Report variable list` gives the question names for other data sheets (between `Study results` and `Study variable list`)}
+#'      \item{}{`Variable name`}
+#'      \item{}{`Field label` is the question name}
+#'      \enumerate{
+#'         \item{}{Use `library(labelled)` with `var_label()`}
+#'         \item{}{For each variable, label it.}
+#'      }
+#'      \item{}{`Optiongroup name`}
+#'      \enumerate{
+#'         \item{1.}{Use `factor()` for each variable using `Option group name` labels and levels}
+#'      }
+#'      \item{}{`Field type` variable data class, useful for date, datetime, and numeric.}
+#'    }
+#'  }
+#'
+#' @docType package
+#' @name CastorR
+NULL

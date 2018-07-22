@@ -1,0 +1,22 @@
+Package: CastorR
+Type: Package
+Title: Format Castor EDC CRF_export.xlsx file for R
+Version: 0.1.00
+Authors@R: person("Erik", "Erhardt", email = "erik@statacumen.com",
+  role = c("aut", "cre"))
+URL: http://StatAcumen.com
+Description: Reads CRF_export.xlsx and formats data for use in R, in
+  particular, variables of class date, datetime, factor, and numeric.
+License: Proprietary
+Depends: R (>= 3.5.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+Requires: dplyr, stringr
+VignetteBuilder: knitr
+BuildVignettes: false
+Imports: 
+    magrittr
