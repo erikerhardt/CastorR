@@ -11,7 +11,7 @@
 
 <meta name="author" content="Erik Erhardt" />
 
-<meta name="date" content="2018-07-19" />
+<meta name="date" content="2018-07-22" />
 
 <title>Castor EDC, R format factor variables</title>
 
@@ -141,7 +141,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Castor EDC, R format factor variables</h1>
 <h4 class="author"><em>Erik Erhardt</em></h4>
-<h4 class="date"><em>July 19, 2018</em></h4>
+<h4 class="date"><em>July 22, 2018</em></h4>
 
 </div>
 
@@ -154,8 +154,6 @@ $(document).ready(function () {
 </div>
 
 <!---
-## IGNORE THIS
-#   Bummer, automatic date doesn't work for Knit PDF:  date: "July 19, 2018"
 # Erik's compile commands in R:
   rm(list=ls())
   #dev.off(dev.list()["RStudioGD"])  # close all plots
@@ -164,18 +162,11 @@ $(document).ready(function () {
   library(knitr)
   knitr::purl(fn.this)
   rmarkdown::render(fn.this)
-#
-# In case you're curious about what the code above does:
-# The purl()   command strips out all the code chunks and writes them to an *.R file
-# The render() command does the same as the "Knit HTML" button,
-#   but all the variables are created in the console.
-# I use these commands because I use a different text editor than RStudio.
-## IGNORE THIS
 -->
 <div id="installing-from-source" class="section level1">
 <h1>Installing from source</h1>
 <p>Set the appropriate path and run this command:</p>
-<pre class="r"><code>install.packages(&quot;./Analysis/Code/CastorR_0.1.00.tar.gz&quot;, repos = NULL, type=&quot;source&quot;)</code></pre>
+<pre class="r"><code>devtools::install_github(&quot;erikerhardt/CastorR&quot;)</code></pre>
 </div>
 <div id="strategy-for-labeling-factor-variables" class="section level1">
 <h1>Strategy for labeling factor variables</h1>
