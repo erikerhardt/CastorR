@@ -64,14 +64,19 @@ castor_assign_variable_labels <-
     dplyr::select(dplyr::one_of(var_names_for_labels))
 
   # Data sheets
+  # Study results sheets
+  names_sheets_study_data       <- c("Study results", "Study variable list")
+
+  # Other fixed names are "Report variable list" and "Field options"
+  # this variable is only used to help choose the "other" sheets
+  names_sheets_report_variables <- c("Report variable list", "Field options")
+
   sheet_master_data <-
-    (names(dat) %in% c("Study results", "Study variable list")) %>%
+    (names(dat) %in% names_sheets_study_data) %>%
     which()
+  # all other sheets
   sheet_numbers_others <-
-    seq(
-      sheet_master_data[1] + 1
-    , sheet_master_data[2] - 1
-    )
+    which( !(names(dat) %in% c(names_sheets_study_data, names_sheets_report_variables)))
 
 
   for (i_sheet in sheet_numbers_others) {
